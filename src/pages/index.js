@@ -1,115 +1,467 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import { Manrope } from 'next/font/google';
+import { useState } from 'react';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
 });
 
 export default function Home() {
+  const [Data, setData] = useState([]);
+  const [OpenInputNimDialog, setOpenInputNimDialog] = useState(false);
+  const [OpenDialogFail, setOpenDialogFail] = useState(false);
+  const [OpenDialogSetSchedule, setOpenDialogSetSchedule] = useState(false);
+  const [OpenDialogCongrats, setOpenDialogCongrats] = useState(false);
+  const status = 'Set Schedule';
+  const data = [
+    {
+      nim: '103022400003',
+      name: 'Rifky Muhammad Prayudhi',
+      prodi: 'S1 Rekayasa Perangkat Lunak',
+      divisi: 'Frontend Developer',
+    },
+    {
+      nim: '607062400007',
+      name: 'Joan Orlando Simajuntak',
+      prodi: 'D3 Rekayasa Perangkat Lunak Aplikasi',
+      divisi: 'Start-up',
+    },
+    {
+      nim: '607062400024',
+      name: 'J A N N A H gatau panjangannya apa',
+      prodi: 'D3 Rekayasa Perangkat Lunak Aplikasi',
+      divisi: 'Start-up',
+    },
+  ];
+
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20`}
-    >
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/pages/index.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className={`${manrope.className}`}>
+      <RegistrationSteps />
+      <InputNimDialog />
+      <OopsDialog />
+      <SetScheduleDialog />
     </div>
+  );
+
+  function InputNimDialog() {
+    const [localNIM, setLocalNIM] = useState('');
+
+    const handleCheckNIM = (e) => {
+      e.preventDefault();
+      const found = data.filter((item) => item.nim === localNIM);
+      if (found.length > 0) {
+        setData(found);
+        console.log('Data ditemukan:', found);
+        if (status === 'Set Schedule') {
+          setOpenDialogSetSchedule(true);
+        } else {
+          setOpenDialogCongrats(true);
+        }
+        setOpenInputNimDialog(false);
+        setLocalNIM('');
+      } else {
+        setData([]);
+        setOpenInputNimDialog(false);
+        setOpenDialogFail(true);
+        setLocalNIM('');
+      }
+    };
+
+    return (
+      <Dialog open={OpenInputNimDialog} onOpenChange={setOpenInputNimDialog}>
+        <DialogContent className='max-w-[609px] min-w-[609px] rounded-[20px] pt-9 pb-[52px] px-[66px] text-center shadow-lg bg-white'>
+          <DialogHeader>
+            <DialogTitle className='text-[32px] text-center font-bold text-black'>
+              Announcement!
+            </DialogTitle>
+          </DialogHeader>
+          <form
+            onSubmit={handleCheckNIM}
+            className='flex flex-col items-center gap-[50px]'
+          >
+            <div className='w-[140px] aspect-square bg-sound bg-cover bg-no-repeat' />
+            <input
+              placeholder='Input NIM'
+              className='outline-none border-none w-[449px] h-[45px] bg-[#F6F5F4] rounded-[14px] px-4 text-black'
+              type='text'
+              value={localNIM}
+              onChange={(e) => {
+                setLocalNIM(e.target.value);
+              }}
+              required
+            />
+            <DialogFooter className='mt-6 flex w-full sm:justify-center'>
+              <Button
+                type='submit'
+                variant='outline'
+                className='rounded-xl border-[1px] max-w-[356px] border-primary text-primary w-full bg-white duration-75 hover:bg-primary hover:text-white'
+              >
+                Check
+              </Button>
+            </DialogFooter>
+          </form>
+        </DialogContent>
+      </Dialog>
+    );
+  }
+
+  function OopsDialog() {
+    return (
+      <Dialog open={OpenDialogFail} onOpenChange={setOpenDialogFail}>
+        <DialogContent className='max-w-[609px] min-w-[609px] rounded-[20px] pt-9 pb-[52px] px-[66px] text-center shadow-lg bg-white'>
+          <DialogHeader>
+            <DialogTitle className='text-[32px] text-center font-bold text-black'>
+              Oopss...
+            </DialogTitle>
+          </DialogHeader>
+
+          <div className='flex flex-col items-center'>
+            <div className='w-[140px] aspect-square bg-ops bg-cover bg-no-repeat' />
+            <DialogDescription className='text-base text-[#0E1925] text-center'>
+              We{"'"}re sorry to say this, but after careful consideration, we
+              have decided that you have not passed this selection stage. We
+              truly appreciate your participation and value your enthusiasm and
+              motivation. We look forward to seeing you in the next opportunity.
+            </DialogDescription>
+          </div>
+
+          <DialogFooter className='mt-6 flex w-full sm:justify-center'>
+            <Button
+              variant='outline'
+              className='rounded-xl border-[1px] max-w-[356px] border-primary text-primary w-full bg-white duration-75 hover:bg-primary hover:text-white'
+              onClick={() => setOpenDialogFail(false)}
+            >
+              Close
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    );
+  }
+
+  function SetScheduleDialog() {
+    return (
+      <Dialog
+        open={OpenDialogSetSchedule}
+        onOpenChange={setOpenDialogSetSchedule}
+      >
+        <DialogContent className='max-w-[609px] min-w-[609px] rounded-[20px] pt-9 pb-[52px] px-[66px] text-center shadow-lg bg-white'>
+          <DialogHeader>
+            <DialogTitle className='text-[32px] text-center font-bold text-black'>
+              Congratulations For You
+            </DialogTitle>
+          </DialogHeader>
+
+          <div className='flex flex-col items-center'>
+            <div className='w-[140px] aspect-square bg-yey bg-cover bg-no-repeat' />
+            <DialogDescription className='text-base text-[#0E1925] text-center'>
+              <span className='text-primary font-semibold'>
+                {Data[0]?.name}
+              </span>{' '}
+              with NIM{' '}
+              <span className='text-primary font-semibold'>{Data[0]?.nim}</span>{' '}
+              has passed this stage! Your journey isn’t over yet, it’s time to
+              move on to the next step! Join the group by click{' '}
+              <a
+                className='text-primary font-semibold underline'
+                href='wa.me/+6281210714320'
+              >
+                join group
+              </a>{' '}
+              for more information.
+            </DialogDescription>
+          </div>
+
+          <DialogFooter className='mt-6 grid grid-cols-1 lg:grid-cols-2 w-full gap-4'>
+            <Button
+              variant='outline'
+              className='rounded-xl border-[1px] max-w-[356px] border-primary text-primary w-full bg-white duration-75 hover:bg-primary hover:text-white'
+              onClick={() => setOpenDialogSetSchedule(false)}
+            >
+              Close
+            </Button>
+            <a href='wa.me/+6281210714320' target='_blank'>
+              <Button
+                variant='outline'
+                className='rounded-xl border-[1px] max-w-[356px] border-white text-white w-full bg-primary duration-75 hover:bg-white hover:text-primary hover:border-primary'
+              >
+                Set a Schedule
+              </Button>
+            </a>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    );
+  }
+
+  function CongratsDialog() {
+    return (
+      <Dialog open={OpenDialogCongrats} onOpenChange={setOpenDialogCongrats}>
+        <DialogContent className='max-w-[609px] min-w-[609px] rounded-[20px] pt-9 pb-[52px] px-[66px] text-center shadow-lg bg-white'>
+          <DialogHeader>
+            <DialogTitle className='text-[32px] text-center font-bold text-black'>
+              Congratulations For You
+            </DialogTitle>
+          </DialogHeader>
+
+          <div className='flex flex-col items-center'>
+            <div className='w-[140px] aspect-square bg-yey bg-cover bg-no-repeat' />
+            <DialogDescription className='text-base text-[#0E1925] text-center'>
+              Congratulations to you
+              <span className='text-primary font-semibold'>
+                {Data[0]?.name}
+              </span>{' '}
+              with NIM{' '}
+              <span className='text-primary font-semibold'>{Data[0]?.nim}</span>{' '}
+              after a long selection process we are pleased to announce that you
+              have successfully passed and been accepted into the Study Group
+              {Data[0]?.divisi} division.
+            </DialogDescription>
+          </div>
+
+          <DialogFooter className='mt-6 grid grid-cols-1 lg:grid-cols-2 w-full gap-4'>
+            <Button
+              variant='outline'
+              className='rounded-xl border-[1px] max-w-[356px] border-primary text-primary w-full bg-white duration-75 hover:bg-primary hover:text-white'
+              onClick={() => setOpenDialogCongrats(false)}
+            >
+              Close
+            </Button>
+            <a href='wa.me/+6281210714320' target='_blank'>
+              <Button
+                variant='outline'
+                className='rounded-xl border-[1px] max-w-[356px] border-white text-white w-full bg-primary duration-75 hover:bg-white hover:text-primary hover:border-primary'
+              >
+                I{"'"}m C-Learner
+              </Button>
+            </a>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    );
+  }
+
+  function StepItemDesktop({ title, description, status, circleColor }) {
+    return (
+      <div className='flex w-1/3 flex-col items-center px-4'>
+        <div className={`h-8 w-8 rounded-full ${circleColor}`} />
+
+        <h3 className='text-[22px] text-center font-bold text-gray-800 mt-[-82px] mb-[82px]'>
+          {title}
+        </h3>
+
+        <p className='mt-1 text-center text-base max-w-[172px] text-gray-600'>
+          {description}
+        </p>
+
+        <div className='mt-4'>
+          {status === 'Clossed' ? (
+            <span className='rounded-lg bg-gray-100 px-6 py-2 text-sm font-medium text-gray-400'>
+              Closed
+            </span>
+          ) : status === 'Upcoming' ? (
+            <span className='rounded-lg bg-gray-100 px-6 py-2 text-sm font-medium text-gray-400'>
+              Upcoming
+            </span>
+          ) : (
+            <button
+              onClick={() => {
+                setOpenInputNimDialog(true);
+              }}
+              className='rounded-lg bg-primary px-6 py-2 text-sm font-medium text-white shadow-md hover:bg-orange-600'
+            >
+              Check the result
+            </button>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  function StepItemMobile({
+    title,
+    description,
+    status,
+    circleColor,
+    isLast,
+    lineColor,
+  }) {
+    return (
+      <div className='flex flex-row'>
+        <div className='relative flex flex-col items-center pr-4'>
+          {!isLast && (
+            <div className={`absolute top-4 h-full w-2 ${lineColor}`} />
+          )}
+
+          <div
+            className={`relative z-10 h-8 w-8 flex-shrink-0 rounded-full ${circleColor}`}
+          />
+        </div>
+
+        <div className='flex flex-col pb-10'>
+          <h3 className='font-semibold text-gray-800'>{title}</h3>
+          <p className='mt-1 text-sm text-gray-600'>{description}</p>
+          <div className='mt-4'>
+            {status === 'Clossed' ? (
+              <span className='rounded-lg bg-gray-100 px-6 py-2 text-sm font-medium text-gray-400'>
+                Closed
+              </span>
+            ) : status === 'Upcoming' ? (
+              <span className='rounded-lg bg-gray-100 px-6 py-2 text-sm font-medium text-gray-400'>
+                Upcoming
+              </span>
+            ) : (
+              <button
+                onClick={() => {
+                  setOpenInputNimDialog(true);
+                }}
+                className='rounded-lg bg-primary px-6 py-2 text-sm font-medium text-white shadow-md hover:bg-orange-600'
+              >
+                Check the result
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  function RegistrationSteps({ classNames }) {
+    const steps = [
+      {
+        title: 'Registration',
+        description: "Your registration's applied successfully",
+        status: 'Clossed',
+        circleColor: 'bg-primary',
+      },
+      {
+        title: 'Administrations stage',
+        description: 'Announcement of administration stage',
+        status: 'Check',
+        circleColor: 'bg-primary',
+      },
+      {
+        title: 'Interview stage',
+        description: 'Announcement of interview stage',
+        status: 'Upcoming',
+        circleColor: 'bg-orange-100',
+      },
+    ];
+
+    return (
+      <div
+        className={`flex min-h-screen justify-center items-center flex-col ${classNames}`}
+      >
+        <SectionTitle
+          upper='Announcement'
+          lower='Roadmap Study Group Recruitment'
+        />
+        <Wrapper className='my-12 w-full'>
+          {/* desktop */}
+          <div className='relative hidden w-full md:block'>
+            <div className='absolute top-3 left-0 right-0 z-0 h-2'>
+              <div className='relative h-full' style={{ margin: '0 16.666%' }}>
+                <div className='h-full w-full rounded-full bg-orange-100' />
+                <div className='absolute top-0 left-0 h-full w-1/2 rounded-full bg-primary' />
+              </div>
+            </div>
+
+            <div className='relative z-10 flex w-full flex-row'>
+              {steps.map((step) => (
+                <StepItemDesktop key={step.title} {...step} />
+              ))}
+            </div>
+          </div>
+
+          {/* mobile */}
+          <div className='w-full md:hidden'>
+            <div className='flex flex-col'>
+              {steps.map((step, index) => {
+                const isLast = index === steps.length - 1;
+                const isCurrentActive = step.circleColor === 'bg-primary';
+                const isNextActive =
+                  !isLast && steps[index + 1].circleColor === 'bg-primary';
+                const lineColor =
+                  isCurrentActive && isNextActive
+                    ? 'bg-primary'
+                    : 'bg-orange-100';
+
+                return (
+                  <StepItemMobile
+                    key={step.title}
+                    {...step}
+                    isLast={isLast}
+                    lineColor={lineColor}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </Wrapper>
+      </div>
+    );
+  }
+}
+
+function Wrapper({ children, className, id }) {
+  return (
+    <>
+      <div
+        id={id || ''}
+        className={`px-4 md:px-0 w-full md:w-[85%] lg:w-full max-w-[1170px] ${className} min-h-fit`}
+      >
+        {children}
+      </div>
+    </>
+  );
+}
+
+function SectionTitle({ upper, lower, classNames }) {
+  return (
+    <div className={`flex justify-center ${classNames}`}>
+      <Wrapper className='flex flex-col gap-1 my-12'>
+        <h2 className='text-primary text-base lg:text-lg font-medium text-center'>
+          {upper}
+        </h2>
+        <p className='text-3xl lg:text-[48px] text-[#0E1925] font-bold text-center'>
+          {lower}
+        </p>
+      </Wrapper>
+    </div>
+  );
+}
+
+function Button({
+  startIcon,
+  endIcon,
+  onClick,
+  text,
+  className,
+  children,
+  type = 'button',
+  ...props
+}) {
+  return (
+    <button
+      onClick={onClick}
+      type={type}
+      className={`py-3 px-4 rounded flex justify-center items-center gap-2 bg-primary ${className}`}
+      {...props}
+    >
+      {startIcon && startIcon}
+      {text}
+      {children}
+      {endIcon && endIcon}
+    </button>
   );
 }

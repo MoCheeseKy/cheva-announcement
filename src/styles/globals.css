@@ -1,8 +1,11 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdf8f1;
+  --foreground: #fdf8f1;
 }
 
 @theme inline {
@@ -10,11 +13,23 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: #f08519;
+
+  --background-image-cheva-logo: url('/images/chevalier_logo.svg');
+  --background-image-cheva-fgs: url('/images/chevalier_aslab_photogroups.svg');
+  --background-image-startup: url('/images/vector_startup.svg');
+  --background-image-webdev: url('/images/vector_webdev.svg');
+  --background-image-android: url('/images/vector_android.svg');
+  --background-image-game: url('/images/vector_game.svg');
+  --background-image-uiux: url('/images/vector_uiux.svg');
+  --background-image-ops: url('/images/opps.svg');
+  --background-image-yey: url('/images/yeyyy.svg');
+  --background-image-sound: url('/images/sound.svg');
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #fdf8f1;
     --foreground: #ededed;
   }
 }
