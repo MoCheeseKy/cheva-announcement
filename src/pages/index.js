@@ -50,6 +50,7 @@ export default function Home() {
       <InputNimDialog />
       <OopsDialog />
       <SetScheduleDialog />
+      <CongratsDialog />
     </div>
   );
 
@@ -79,20 +80,20 @@ export default function Home() {
 
     return (
       <Dialog open={OpenInputNimDialog} onOpenChange={setOpenInputNimDialog}>
-        <DialogContent className='max-w-[609px] min-w-[609px] rounded-[20px] pt-9 pb-[52px] px-[66px] text-center shadow-lg bg-white'>
+        <DialogContent className='max-w-sm rounded-[20px] bg-white pt-9 pb-12 px-6 text-center shadow-lg sm:max-w-[609px] sm:min-w-[609px] sm:px-[66px] sm:pb-[52px]'>
           <DialogHeader>
-            <DialogTitle className='text-[32px] text-center font-bold text-black'>
+            <DialogTitle className='text-2xl font-bold text-black text-center sm:text-[32px]'>
               Announcement!
             </DialogTitle>
           </DialogHeader>
           <form
             onSubmit={handleCheckNIM}
-            className='flex flex-col items-center gap-[50px]'
+            className='flex flex-col items-center gap-8 sm:gap-[50px]'
           >
-            <div className='w-[140px] aspect-square bg-sound bg-cover bg-no-repeat' />
+            <div className='w-[100px] aspect-square bg-sound bg-cover bg-no-repeat sm:w-[140px]' />
             <input
               placeholder='Input NIM'
-              className='outline-none border-none w-[449px] h-[45px] bg-[#F6F5F4] rounded-[14px] px-4 text-black'
+              className='h-[45px] w-full rounded-[14px] border-none bg-[#F6F5F4] px-4 text-black outline-none sm:w-[449px]'
               type='text'
               value={localNIM}
               onChange={(e) => {
@@ -100,11 +101,11 @@ export default function Home() {
               }}
               required
             />
-            <DialogFooter className='mt-6 flex w-full sm:justify-center'>
+            <DialogFooter className='mt-6 flex w-full justify-center'>
               <Button
                 type='submit'
                 variant='outline'
-                className='rounded-xl border-[1px] max-w-[356px] border-primary text-primary w-full bg-white duration-75 hover:bg-primary hover:text-white'
+                className='w-full max-w-[356px] rounded-xl border-[1px] border-primary bg-white text-primary duration-75 hover:bg-primary hover:text-white'
               >
                 Check
               </Button>
@@ -118,16 +119,16 @@ export default function Home() {
   function OopsDialog() {
     return (
       <Dialog open={OpenDialogFail} onOpenChange={setOpenDialogFail}>
-        <DialogContent className='max-w-[609px] min-w-[609px] rounded-[20px] pt-9 pb-[52px] px-[66px] text-center shadow-lg bg-white'>
+        <DialogContent className='max-w-sm rounded-[20px] bg-white pt-9 pb-12 px-6 text-center shadow-lg sm:max-w-[609px] sm:min-w-[609px] sm:px-[66px] sm:pb-[52px]'>
           <DialogHeader>
-            <DialogTitle className='text-[32px] text-center font-bold text-black'>
+            <DialogTitle className='text-2xl font-bold text-black text-center sm:text-[32px]'>
               Oopss...
             </DialogTitle>
           </DialogHeader>
 
-          <div className='flex flex-col items-center'>
-            <div className='w-[140px] aspect-square bg-ops bg-cover bg-no-repeat' />
-            <DialogDescription className='text-base text-[#0E1925] text-center'>
+          <div className='flex flex-col items-center gap-8 sm:gap-10'>
+            <div className='w-[100px] aspect-square bg-ops bg-cover bg-no-repeat sm:w-[140px]' />
+            <DialogDescription className='text-base text-center text-[#0E1925]'>
               We{"'"}re sorry to say this, but after careful consideration, we
               have decided that you have not passed this selection stage. We
               truly appreciate your participation and value your enthusiasm and
@@ -135,10 +136,10 @@ export default function Home() {
             </DialogDescription>
           </div>
 
-          <DialogFooter className='mt-6 flex w-full sm:justify-center'>
+          <DialogFooter className='mt-6 flex w-full justify-center'>
             <Button
               variant='outline'
-              className='rounded-xl border-[1px] max-w-[356px] border-primary text-primary w-full bg-white duration-75 hover:bg-primary hover:text-white'
+              className='w-full max-w-[356px] rounded-xl border-[1px] border-primary bg-white text-primary duration-75 hover:bg-primary hover:text-white'
               onClick={() => setOpenDialogFail(false)}
             >
               Close
@@ -148,32 +149,31 @@ export default function Home() {
       </Dialog>
     );
   }
-
   function SetScheduleDialog() {
     return (
       <Dialog
         open={OpenDialogSetSchedule}
         onOpenChange={setOpenDialogSetSchedule}
       >
-        <DialogContent className='max-w-[609px] min-w-[609px] rounded-[20px] pt-9 pb-[52px] px-[66px] text-center shadow-lg bg-white'>
+        <DialogContent className='max-w-sm rounded-[20px] bg-white pt-9 pb-12 px-6 text-center shadow-lg sm:max-w-[609px] sm:min-w-[609px] sm:px-[66px] sm:pb-[52px]'>
           <DialogHeader>
-            <DialogTitle className='text-[32px] text-center font-bold text-black'>
+            <DialogTitle className='text-2xl font-bold text-black text-center sm:text-[32px]'>
               Congratulations For You
             </DialogTitle>
           </DialogHeader>
 
-          <div className='flex flex-col items-center'>
-            <div className='w-[140px] aspect-square bg-yey bg-cover bg-no-repeat' />
-            <DialogDescription className='text-base text-[#0E1925] text-center'>
-              <span className='text-primary font-semibold'>
+          <div className='flex flex-col items-center gap-8 sm:gap-10'>
+            <div className='w-[100px] aspect-square bg-yey bg-cover bg-no-repeat sm:w-[140px]' />
+            <DialogDescription className='text-base text-center text-[#0E1925]'>
+              <span className='font-semibold text-primary'>
                 {Data[0]?.name}
               </span>{' '}
               with NIM{' '}
-              <span className='text-primary font-semibold'>{Data[0]?.nim}</span>{' '}
+              <span className='font-semibold text-primary'>{Data[0]?.nim}</span>{' '}
               has passed this stage! Your journey isn’t over yet, it’s time to
               move on to the next step! Join the group by click{' '}
               <a
-                className='text-primary font-semibold underline'
+                className='font-semibold text-primary underline'
                 href='wa.me/+6281210714320'
               >
                 join group
@@ -182,10 +182,10 @@ export default function Home() {
             </DialogDescription>
           </div>
 
-          <DialogFooter className='mt-6 grid grid-cols-1 lg:grid-cols-2 w-full gap-4'>
+          <DialogFooter className='mt-6 grid w-full grid-cols-1 gap-4 sm:grid-cols-2'>
             <Button
               variant='outline'
-              className='rounded-xl border-[1px] max-w-[356px] border-primary text-primary w-full bg-white duration-75 hover:bg-primary hover:text-white'
+              className='w-full max-w-[356px] rounded-xl border-[1px] border-primary bg-white text-primary duration-75 hover:bg-primary hover:text-white'
               onClick={() => setOpenDialogSetSchedule(false)}
             >
               Close
@@ -193,7 +193,7 @@ export default function Home() {
             <a href='wa.me/+6281210714320' target='_blank'>
               <Button
                 variant='outline'
-                className='rounded-xl border-[1px] max-w-[356px] border-white text-white w-full bg-primary duration-75 hover:bg-white hover:text-primary hover:border-primary'
+                className='w-full max-w-[356px] rounded-xl border-[1px] border-white bg-primary text-white duration-75 hover:border-primary hover:bg-white hover:text-primary'
               >
                 Set a Schedule
               </Button>
@@ -207,32 +207,32 @@ export default function Home() {
   function CongratsDialog() {
     return (
       <Dialog open={OpenDialogCongrats} onOpenChange={setOpenDialogCongrats}>
-        <DialogContent className='max-w-[609px] min-w-[609px] rounded-[20px] pt-9 pb-[52px] px-[66px] text-center shadow-lg bg-white'>
+        <DialogContent className='max-w-sm rounded-[20px] bg-white pt-9 pb-12 px-6 text-center shadow-lg sm:max-w-[609px] sm:min-w-[609px] sm:px-[66px] sm:pb-[52px]'>
           <DialogHeader>
-            <DialogTitle className='text-[32px] text-center font-bold text-black'>
+            <DialogTitle className='text-2xl font-bold text-black text-center sm:text-[32px]'>
               Congratulations For You
             </DialogTitle>
           </DialogHeader>
 
-          <div className='flex flex-col items-center'>
-            <div className='w-[140px] aspect-square bg-yey bg-cover bg-no-repeat' />
-            <DialogDescription className='text-base text-[#0E1925] text-center'>
+          <div className='flex flex-col items-center gap-8 sm:gap-10'>
+            <div className='w-[100px] aspect-square bg-yey bg-cover bg-no-repeat sm:w-[140px]' />
+            <DialogDescription className='text-base text-center text-[#0E1925]'>
               Congratulations to you
-              <span className='text-primary font-semibold'>
+              <span className='font-semibold text-primary'>
                 {Data[0]?.name}
               </span>{' '}
               with NIM{' '}
-              <span className='text-primary font-semibold'>{Data[0]?.nim}</span>{' '}
+              <span className='font-semibold text-primary'>{Data[0]?.nim}</span>{' '}
               after a long selection process we are pleased to announce that you
               have successfully passed and been accepted into the Study Group
               {Data[0]?.divisi} division.
             </DialogDescription>
           </div>
 
-          <DialogFooter className='mt-6 grid grid-cols-1 lg:grid-cols-2 w-full gap-4'>
+          <DialogFooter className='mt-6 grid w-full grid-cols-1 gap-4 sm:grid-cols-2'>
             <Button
               variant='outline'
-              className='rounded-xl border-[1px] max-w-[356px] border-primary text-primary w-full bg-white duration-75 hover:bg-primary hover:text-white'
+              className='w-full max-w-[356px] rounded-xl border-[1px] border-primary bg-white text-primary duration-75 hover:bg-primary hover:text-white'
               onClick={() => setOpenDialogCongrats(false)}
             >
               Close
@@ -240,7 +240,7 @@ export default function Home() {
             <a href='wa.me/+6281210714320' target='_blank'>
               <Button
                 variant='outline'
-                className='rounded-xl border-[1px] max-w-[356px] border-white text-white w-full bg-primary duration-75 hover:bg-white hover:text-primary hover:border-primary'
+                className='w-full max-w-[356px] rounded-xl border-[1px] border-white bg-primary text-white duration-75 hover:border-primary hover:bg-white hover:text-primary'
               >
                 I{"'"}m C-Learner
               </Button>
