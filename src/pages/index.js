@@ -101,7 +101,7 @@ export default function Home() {
               }}
               required
             />
-            <DialogFooter className='mt-6 flex w-full justify-center'>
+            <DialogFooter className='mt-6 flex w-full sm:justify-center'>
               <Button
                 type='submit'
                 variant='outline'
