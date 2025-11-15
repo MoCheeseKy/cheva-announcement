@@ -915,7 +915,7 @@ export default function Home() {
             </DialogDescription>
           </div>
 
-          <DialogFooter className='mt-6 flex w-full justify-center'>
+          <DialogFooter className='mt-6 flex w-full sm:justify-center'>
             <Button
               variant='outline'
               className='w-full max-w-[356px] rounded-xl border-[1px] border-primary bg-white text-primary duration-75 hover:bg-primary hover:text-white'
