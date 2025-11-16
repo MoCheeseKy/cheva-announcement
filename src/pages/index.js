@@ -1079,7 +1079,10 @@ export default function Home() {
             >
               Close
             </Button>
-            <a href='wa.me/+6281210714320' target='_blank'>
+            <a
+              href='https://docs.google.com/spreadsheets/d/1_fyYMW1FBtjpQNqQDk6GGLtMVnSqEnjCChfbi3l1tNw/edit?gid=1385190244#gid=1385190244'
+              target='_blank'
+            >
               <Button
                 variant='outline'
                 className='w-full max-w-[356px] rounded-xl border-[1px] border-white bg-primary text-white duration-75 hover:border-primary hover:bg-white hover:text-primary'
