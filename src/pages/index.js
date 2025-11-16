@@ -1064,8 +1064,12 @@ export default function Home() {
               </span>{' '}
               with NIM{' '}
               <span className='font-semibold text-primary'>{Data[0]?.nim}</span>{' '}
-              has passed this stage! Your journey isn’t over yet, it’s time to
-              move on to the next step! Join the group by click{' '}
+              has passed this stage and has been accepted into the{' '}
+              <span className='font-semibold text-primary'>
+                {Data[0]?.divisi}
+              </span>
+              ! Your journey isn’t over yet, it’s time to move on to the next
+              step! Join the group by click{' '}
               <a
                 target='_blank'
                 className='font-semibold text-primary underline'
