@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/dialog';
 import { Manrope } from 'next/font/google';
 import { useState } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -939,6 +940,11 @@ export default function Home() {
       <OopsDialog />
       <SetScheduleDialog />
       <CongratsDialog />
+      <a href='https://wa.me/6287847714840' target='_blank'>
+        <div className='text-green-600 fixed bottom-10 right-10 text-4xl cursor-pointer z-50'>
+          <FaWhatsapp />
+        </div>
+      </a>
     </div>
   );
 
@@ -968,7 +974,7 @@ export default function Home() {
 
     return (
       <Dialog open={OpenInputNimDialog} onOpenChange={setOpenInputNimDialog}>
-        <DialogContent className='max-w-sm rounded-[20px] bg-white pt-9 pb-12 px-6 text-center shadow-lg sm:max-w-[609px] sm:min-w-[609px] sm:px-[66px] sm:pb-[52px]'>
+        <DialogContent className='rounded-[20px] bg-white pt-9 pb-12 px-6 text-center shadow-lg sm:max-w-[268px] sm:min-w-[609px] sm:px-[66px] sm:pb-[52px]'>
           <DialogHeader>
             <DialogTitle className='text-2xl font-bold text-black text-center sm:text-[32px]'>
               Announcement!
@@ -1007,7 +1013,7 @@ export default function Home() {
   function OopsDialog() {
     return (
       <Dialog open={OpenDialogFail} onOpenChange={setOpenDialogFail}>
-        <DialogContent className='max-w-sm rounded-[20px] bg-white pt-9 pb-12 px-6 text-center shadow-lg sm:max-w-[609px] sm:min-w-[609px] sm:px-[66px] sm:pb-[52px]'>
+        <DialogContent className='rounded-[20px] bg-white pt-9 pb-12 px-6 text-center shadow-lg sm:max-w-[268px] sm:min-w-[609px] sm:px-[66px] sm:pb-[52px]'>
           <DialogHeader>
             <DialogTitle className='text-2xl font-bold text-black text-center sm:text-[32px]'>
               Oopss...
@@ -1043,7 +1049,7 @@ export default function Home() {
         open={OpenDialogSetSchedule}
         onOpenChange={setOpenDialogSetSchedule}
       >
-        <DialogContent className='max-w-sm rounded-[20px] bg-white pt-9 pb-12 px-6 text-center shadow-lg sm:max-w-[609px] sm:min-w-[609px] sm:px-[66px] sm:pb-[52px]'>
+        <DialogContent className='rounded-[20px] bg-white pt-9 pb-12 px-6 text-center shadow-lg sm:max-w-[268px] sm:min-w-[609px] sm:px-[66px] sm:pb-[52px]'>
           <DialogHeader>
             <DialogTitle className='text-2xl font-bold text-black text-center sm:text-[32px]'>
               Congratulations For You
@@ -1099,7 +1105,7 @@ export default function Home() {
   function CongratsDialog() {
     return (
       <Dialog open={OpenDialogCongrats} onOpenChange={setOpenDialogCongrats}>
-        <DialogContent className='max-w-sm rounded-[20px] bg-white pt-9 pb-12 px-6 text-center shadow-lg sm:max-w-[609px] sm:min-w-[609px] sm:px-[66px] sm:pb-[52px]'>
+        <DialogContent className='rounded-[20px] bg-white pt-9 pb-12 px-6 text-center shadow-lg sm:max-w-[268px] sm:min-w-[609px] sm:px-[66px] sm:pb-[52px]'>
           <DialogHeader>
             <DialogTitle className='text-2xl font-bold text-black text-center sm:text-[32px]'>
               Congratulations For You
