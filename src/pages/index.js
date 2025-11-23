@@ -887,7 +887,7 @@ export default function Home() {
       {
         title: 'Interview stage',
         description: 'Announcement of interview stage',
-        status: 'Upcoming',
+        status: 'Check',
         circleColor: 'bg-orange-100',
       },
     ];
