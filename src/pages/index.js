@@ -23,913 +23,88 @@ export default function Home() {
   const [OpenDialogFail, setOpenDialogFail] = useState(false);
   const [OpenDialogSetSchedule, setOpenDialogSetSchedule] = useState(false);
   const [OpenDialogCongrats, setOpenDialogCongrats] = useState(false);
-  const status = 'Set Schedule';
+  const status = 'C-Learner';
   const data = [
     // Frontend DEV
     {
       'nim': '607062400048',
       'name': 'Ihsan Faiz',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '707082430007',
       'name': 'Fatkhur Royyan',
-      'prodi': 'S1 Terapan Teknologi Rekayasa Multimedia',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '103012340185',
       'name': 'Maliki Kadafa Tsaqif',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '103032400016',
       'name': 'Muhammad Naufal Sahidan',
-      'prodi': 'S1 Teknologi Informasi',
-      'divisi': 'Frontend Developer',
-    },
-    {
-      'nim': '607062500013',
-      'name': 'Ahmad Zaki Sukmawansyah',
-      'prodi': 'D3 RPLA',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '103012340364',
       'name': 'Muhammad Amir Ashshiddiq',
-      'prodi': 'International Informatika',
-      'divisi': 'Frontend Developer',
-    },
-    {
-      'nim': '103032400042',
-      'name': 'Joanna Michelle Tambunan',
-      'prodi': 'S1 Teknologi Informasi',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '103012400134',
       'name': 'Zulfa Almajid Basyaasyah',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Frontend Developer',
-    },
-    {
-      'nim': '103012430027',
-      'name': 'Hafiz Fajar Ramadhan',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Frontend Developer',
-    },
-    {
-      'nim': '707012400030',
-      'name': 'Rezkia Aizar',
-      'prodi': 'S1 Terapan Sistem Informasi Kota Cerdas',
-      'divisi': 'Frontend Developer',
-    },
-    {
-      'nim': '103012400060',
-      'name': 'Raihansya Abid Zhafran Ayyasy',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '102012400346',
       'name': 'Imam budi prasojo',
-      'prodi': 'S1 teknik industri',
-      'divisi': 'Frontend Developer',
-    },
-    {
-      'nim': '103012330066',
-      'name': 'Reyhan Agra Syihab',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Frontend Developer',
-    },
-    {
-      'nim': '102022400224',
-      'name': 'Ahmad Hafidz Maulana',
-      'prodi': 'Sistem Informasi',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '103012400040',
       'name': 'Johanes Kevin Agustahadi',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '103022400114',
       'name': 'Joanne Agnesia Nempung',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '103022400084',
       'name': 'Sofia Mehira Simanihuruk',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '103022300043',
       'name': 'Mohammad Ilham Firdaus',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '607022430003',
       'name': 'Fatin Muflihuts Tsani',
-      'prodi': 'D3 Teknologi Komputer',
-      'divisi': 'Frontend Developer',
-    },
-    {
-      'nim': '103032430002',
-      'name': 'Muhammad Wahyu Firmandana',
-      'prodi': 'S1 Teknologi Informasi',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '607062530006',
       'name': 'Lala Fadhilah Khairunisa',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '103012300316',
       'name': 'Nabila Putri Azhari',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Frontend Developer',
-    },
-    {
-      'nim': '607062500004',
-      'name': 'Ali Ghimar Budiana',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '103022530025',
       'name': 'Raihan Musthafa Kamal',
-      'prodi': 'Rekayasa Perangkat Lunak',
-      'divisi': 'Frontend Developer',
+      'divisi': 'FrontEnd developer',
     },
     {
       'nim': '103022430015',
       'name': 'Aruna Jannu Rezasyah',
-      'prodi': 'Rekayasa Perangkat lunak',
-      'divisi': 'Frontend Developer',
-    },
-    // UIUX
-    {
-      'nim': '103012300306',
-      'name': 'Rizky Darmawan',
-      'prodi': 'S1 Informatika',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103012400044',
-      'name': 'Muhammad Fauzi Ramadhan',
-      'prodi': 'S1 Informatika',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103022400095',
-      'name': 'Hani Lutfi Az Zahra',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '607062430010',
-      'name': 'Putri Aulia Lutfiyah',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103022400014',
-      'name': 'Nauvalky Kusfito Guci',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103012400294',
-      'name': 'Naufal Edgina Apta Aisy',
-      'prodi': 'S1 Informatika',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103012300467',
-      'name': 'Muhammad Fikri Anwar',
-      'prodi': 'S1 Informatika',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103012440004',
-      'name': 'Rakha Anargya Wibowo',
-      'prodi': 'S1 Informatika',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '607012530002',
-      'name': 'Tiara Dewi Rarasati',
-      'prodi': 'D3 Sistem Informasi',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103012300315',
-      'name': 'Raja Hanif Shirvani',
-      'prodi': 'S1 Informatika',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '707012400044',
-      'name': 'Muhammad Nabil Al Fatih',
-      'prodi': 'D4 Sistem Informasi Kota Cerdas',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103012330531',
-      'name': 'Nabila Putri Aulia',
-      'prodi': 'S1 Informatika',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103012300321',
-      'name': 'Muhammad Zibran Santosa',
-      'prodi': 'S1 Informatika',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '707082400133',
-      'name': 'Zaki Syahrul Huda',
-      'prodi': 'D4 Teknologi Rekayasa Multimedia',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103022430014',
-      'name': 'Muhammad Abyan Effendi',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103012400229',
-      'name': "Muhammad Alvin Faa'iz",
-      'prodi': 'S1 Informatika',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '607062400084',
-      'name': 'Haura Fathinah Afiyah Mumtaz',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103012400098',
-      'name': 'Adrian Anis Pratama',
-      'prodi': 'S1 Informatika',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103012300120',
-      'name': 'Sitti Fadhillah Nur Ahsan',
-      'prodi': 'S1 Informatika',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103012300329',
-      'name': 'Salsabilla Najwa Khasanah',
-      'prodi': 'S1 Informatika',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '707082400004',
-      'name': 'Andi Ahmad Surya',
-      'prodi': 'D4 Teknologi Rekayasa Multimedia',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '707082430009',
-      'name': 'Nadhira Rahma Salsabila',
-      'prodi': 'D4 Teknologi Rekayasa Multimedia',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103032430017',
-      'name': 'fino dwi fajar',
-      'prodi': 'S1 Teknologi Informasi',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '607042400083',
-      'name': 'Aisyah Putri Salsabila',
-      'prodi': 'D3 Digital Marketing',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103012400173',
-      'name': 'Rizky Febriyanto',
-      'prodi': 'S1 Informatika',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '607012400107',
-      'name': 'Afif Nurdwi Wicaksono',
-      'prodi': 'D3 Sistem Informasi',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103032400095',
-      'name': 'Sakha Afif Hardhana',
-      'prodi': 'S1 Teknologi Informasi',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103012400316',
-      'name': 'Dafa Izul Haq',
-      'prodi': 'S1 Informatika',
-      'divisi': 'UIUX',
-    },
-    {
-      'nim': '103052400058',
-      'name': 'Ayyasy Adiatma',
-      'prodi': 'S1 Data Sains',
-      'divisi': 'UIUX',
-    },
-    // Mobile DEV
-    {
-      'nim': '103022400029',
-      'name': 'Aufa Azzaky Arief',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '607062500018',
-      'name': 'Muhammad Rian Nabil Maulana',
-      'prodi': 'D3 RPLA',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '103012430037',
-      'name': 'Muhammad Faiz Fadhlurrohman Bastomi',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '103012300408',
-      'name': 'Faiz Elfahad Kurniawan',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '10312400009',
-      'name': 'Hakim Akram Azizi',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '103012400055',
-      'name': 'Muhammad Huttaqi',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '103012300468',
-      'name': 'Muhammad Attallah Arkan Ihsani',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '607012500067',
-      'name': 'Muhammad Ariansyah Fajar Saputra',
-      'prodi': 'D3 SISTEM INFORMASI',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '103012400354',
-      'name': 'Muhammad Ihsan Abdurrasyid',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '1030124002223',
-      'name': 'Azh Zhahir Ramadhan Putra',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '103022330150',
-      'name': 'Muhammad Ihsan Romdhon',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '607062430011',
-      'name': 'Gabriel Armando Manik',
-      'prodi': 'D3 RPLA',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '103012330171',
-      'name': 'Tiwi Arum Setyaningsih',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '103012330271',
-      'name': 'Athallah Zacky Maulana',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '103012430039',
-      'name': 'Raditya Kemal Thooriq',
-      'prodi': 'Informatika',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '103022300104',
-      'name': 'Riza Muhammad Putra',
-      'prodi': 'S 1 Rekayasa Perangkat Lunak',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '103012300176',
-      'name': 'Kemas M. Aryadary Rasyad',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '103012400280',
-      'name': 'Adam Nugraha',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '103022400075',
-      'name': 'Chris Cornelis Lukito',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '607062500032',
-      'name': 'Fikrii Abdillah Khoiristi',
-      'prodi': 'Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '607062500014',
-      'name': 'Yusup Ardiansyah Dwiharjo',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'Mobile Developer',
-    },
-    {
-      'nim': '103022430016',
-      'name': 'Rizkya Ramdan',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Mobile Developer',
-    },
-    // Backend DEV
-    {
-      'nim': '607062400092',
-      'name': 'Naufal Sulthan Fakhry',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '102022430060',
-      'name': 'Alif Muslim Abdurrahman',
-      'prodi': 'S1 Sistem Informasi',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '101032400026',
-      'name': 'Dwi Yudha Kartika Putransyah',
-      'prodi': 'S1 Teknik Komputer',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '607062500023',
-      'name': 'Moch Bagja Fadillah',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '607062530004',
-      'name': 'Yughi Shifa Linafusil Mugi Hidayah',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103022400134',
-      'name': 'Muhammad Ridho Firdaus',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103012300283',
-      'name': 'Hilmi Musyafa',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '607062400031',
-      'name': 'Alfonsus Dwianka Saputra',
-      'prodi': 'D3 Rekayasa perangkat lunak aplikasi',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103022400039',
-      'name': 'Achmad Fauzan Husain',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103022300010',
-      'name': 'Yudha Harwanto Putra',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103012400368',
-      'name': 'Muhammad Naufal Hartono',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103012300012',
-      'name': 'Shadra Mehdi Irfani',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103022400117',
-      'name': 'ILHAM TIO RAMADHAN',
-      'prodi': 'S1 REKAYASA PERANGKAT LUNAK',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '607062530023',
-      'name': 'Muhammad Ammar Zayyad Rizki',
-      'prodi': 'D3 RPLA',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103012400119',
-      'name': 'Ihsan Dwika Putra',
-      'prodi': 'Informatika',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '607062500015',
-      'name': 'Ammar raffa zainuddin',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103012400159',
-      'name': 'Adison Simanullang',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103012400272',
-      'name': 'Wildan Bugi Rivansyah',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103012400330',
-      'name': 'RAIHAN WENDRA BASWARA',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103012400148',
-      'name': 'Pangeran Clevario Decaesario',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103012400239',
-      'name': 'Farhan Muhammad Huda',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103012400050',
-      'name': 'Ahmad Faris',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103022400087',
-      'name': 'Anugrah Palesang Pasinggi',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '607012430016',
-      'name': 'Inaya Faridah',
-      'prodi': 'D3 Sistem Informasi',
-      'divisi': 'Backend',
-    },
-    {
-      'nim': '103012400004',
-      'name': 'Muchammad Munawir Habibur Rochman',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Backend',
-    },
-    // Start-up
-    {
-      'nim': '607062400049',
-      'name': 'Astrid Fayyaza Danishara',
-      'prodi': 'D3 RPLA',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '103022400016',
-      'name': 'I PUTU GEDE DEVA GUNDHALA',
-      'prodi': 'REKAYASA PERANGKAT LUNAK',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '607012400086',
-      'name': 'Adzra Nurul Aditama',
-      'prodi': 'D3 Sistem Informasi',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '103022400086',
-      'name': 'Khalifa Fattan Ahmad',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '707082400142',
-      'name': 'Nesya Syafira Anandita',
-      'prodi': 'Teknologi Rekayasa Multimedia',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '607062400107',
-      'name': 'Muhammad iqbal gibrany',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '607062530021',
-      'name': 'Mustofa Bahsin',
-      'prodi': 'Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '103052430011',
-      'name': 'Adinda Hayun Khoirunnisa',
-      'prodi': 'S1 Sains Data',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '607062400027',
-      'name': 'Muthia Luthfi Nurwindi',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '105022400391',
-      'name': 'Damai Alissa Fitriadina Arlistya',
-      'prodi': 'S1 Ilmu Komunikasi',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '103052430017',
-      'name': 'Muhammad Dzaki',
-      'prodi': 'S1 Sains Data',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '607062530005',
-      'name': 'Nadaa Az Zahra',
-      'prodi': 'Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '607012400066',
-      'name': 'Ariel Kristian Gultom',
-      'prodi': 'D3 Sistem Informasi',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '105012330202',
-      'name': 'Kundang Brilyan Shirotul Mas',
-      'prodi': 'Administrasi Bisnis',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '607012500086',
-      'name': 'Nico Ikhsan Fauzi',
-      'prodi': 'D3 sistem informasi',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '607062530014',
-      'name': 'Muhammad Fahrezi Nasution',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '607012400018',
-      'name': 'Fitri amelia sitorus',
-      'prodi': 'D3 Sistem informasi',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '103032400153',
-      'name': 'Muhammad Hafiz Abdillah',
-      'prodi': 'S1 Teknologi Informasi',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '103012300383',
-      'name': 'Novel Shiffa Octaviani',
-      'prodi': 'S1 Informatika',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '103022400055',
-      'name': 'Muhammad Radhi Haidar Rafi',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '607062400020',
-      'name': 'Mohammad Rasya Maessa Nugraha',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '103012300379',
-      'name': 'Ghaisani Zhafarina',
-      'prodi': 'S1 Informatika',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '103022430014',
-      'name': 'Muhammad Abyan Effendi',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '103012400308',
-      'name': 'Farrel Tampubolon',
-      'prodi': 'S1 Informatika',
-      'divisi': 'StartUp',
-    },
-    {
-      'nim': '607062400100',
-      'name': 'Farras Muhammad Razan',
-      'prodi': 'D3 Rekayasa Perangkat Lunak Aplikasi',
-      'divisi': 'StartUp',
-    },
-    // Game DEV
-    {
-      'nim': '103012330422',
-      'name': 'Binar Muhammad Faza',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '103012400080',
-      'name': 'Nazal Putra Pindhad',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '103012300216',
-      'name': 'Arsyad Maulana Ahsan',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '2407112398',
-      'name': 'Fathin Ahmad Zidan A',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '103022400122',
-      'name': 'Albert Sebastian Tobing',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '103012400088',
-      'name': 'Naufal Hanif',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '103012340525',
-      'name': 'Suara Jingga Yoe',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '103012300379',
-      'name': 'Ghaisani Zhafarina',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '707082400065',
-      'name': 'Arya Maulana Nursanto',
-      'prodi': 'D4 Teknologi Rekayasa Multimedia',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '103012400155',
-      'name': 'Akmal Luigi Pradana',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '707022500036',
-      'name': 'Muhammad Caesar Rifqi',
-      'prodi': 'D4 Teknologi Rekayasa Multimedia',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '103022400056',
-      'name': 'Muhammad Daffa Arifin',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '103012400201',
-      'name': 'DIMAS TRI MAHESA',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '707082400085',
-      'name': 'Syira Putra Alegra',
-      'prodi': 'S1 Terapan Teknologi Rekayasa Multimedia',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '103022400031',
-      'name': 'Raissha Najwa Maharani',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '607062400049',
-      'name': 'Astrid Fayyaza Danishara',
-      'prodi': 'D3 RPLA',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '103012400173',
-      'name': 'RIZKY FEBRIYANTO',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '707082400048',
-      'name': 'GIftalla Mauly Faidza',
-      'prodi': 'S1 Teknologi Rekayasa Multimedia',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '103012400397',
-      'name': 'Atha Fathi Murtadha',
-      'prodi': 'D3 RPLA',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '103022400107',
-      'name': 'M. Rayhan Ramadhan Afdhani',
-      'prodi': 'S1 Rekayasa Perangkat Lunak',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '103012300467',
-      'name': 'Muhammad Fikri Anwar',
-      'prodi': 'S1 Informatika',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '101022500138',
-      'name': 'Almer Fakhir Arwonio',
-      'prodi': 'S1 Teknik Elektro',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '707082330149',
-      'name': 'Putu Bagus Ananta Krisna Paritranaya',
-      'prodi': 'D4 Teknologi Rekayasa Multimedia',
-      'divisi': 'Game Developer',
-    },
-    {
-      'nim': '607062500050',
-      'name': 'M. Rasyid Asyran',
-      'prodi': 'Rekayasa Perangkat Lunak',
-      'divisi': 'Game Developer',
+      'divisi': 'FrontEnd developer',
     },
   ];
 
@@ -1156,7 +331,7 @@ export default function Home() {
   function StepItemDesktop({ title, description, status, circleColor }) {
     return (
       <div className='flex w-1/3 flex-col items-center px-4'>
-        <div className={`h-8 w-8 rounded-full ${circleColor}`} />
+        <div className={`h-8 w-8 rounded-full bg-primary`} />
 
         <h3 className='text-[22px] text-center font-bold text-gray-800 mt-[-82px] mb-[82px]'>
           {title}
@@ -1206,7 +381,7 @@ export default function Home() {
           )}
 
           <div
-            className={`relative z-10 h-8 w-8 flex-shrink-0 rounded-full ${circleColor}`}
+            className={`relative z-10 h-8 w-8 flex-shrink-0 rounded-full bg-primary`}
           />
         </div>
 
@@ -1249,13 +424,13 @@ export default function Home() {
       {
         title: 'Administrations stage',
         description: 'Announcement of administration stage',
-        status: 'Check',
+        status: 'Clossed',
         circleColor: 'bg-primary',
       },
       {
         title: 'Interview stage',
         description: 'Announcement of interview stage',
-        status: 'Upcoming',
+        status: 'Check',
         circleColor: 'bg-orange-100',
       },
     ];
@@ -1273,7 +448,7 @@ export default function Home() {
           <div className='relative hidden w-full md:block'>
             <div className='absolute top-3 left-0 right-0 z-0 h-2'>
               <div className='relative h-full' style={{ margin: '0 16.666%' }}>
-                <div className='h-full w-full rounded-full bg-orange-100' />
+                <div className='h-full w-full rounded-full bg-primary' />
                 <div className='absolute top-0 left-0 h-full w-1/2 rounded-full bg-primary' />
               </div>
             </div>
@@ -1293,11 +468,7 @@ export default function Home() {
                 const isCurrentActive = step.circleColor === 'bg-primary';
                 const isNextActive =
                   !isLast && steps[index + 1].circleColor === 'bg-primary';
-                const lineColor =
-                  isCurrentActive && isNextActive
-                    ? 'bg-primary'
-                    : 'bg-orange-100';
-
+                const lineColor = 'bg-primary';
                 return (
                   <StepItemMobile
                     key={step.title}
