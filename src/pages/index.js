@@ -219,7 +219,7 @@ export default function Home() {
       'divisi': 'UI/UX',
     },
     {
-      'nim': '103012400004',
+      'nim': '103012440004',
       'name': 'Rakha Anargya Wibowo',
       'divisi': 'UI/UX',
     },
@@ -249,7 +249,7 @@ export default function Home() {
       'divisi': 'UI/UX',
     },
     {
-      'nim': '103022400014',
+      'nim': '103022430014',
       'name': 'Muhammad Abyan Effendi',
       'divisi': 'UI/UX',
     },
@@ -887,7 +887,7 @@ export default function Home() {
       {
         title: 'Interview stage',
         description: 'Announcement of interview stage',
-        status: 'Check',
+        status: 'Upcoming',
         circleColor: 'bg-orange-100',
       },
     ];
